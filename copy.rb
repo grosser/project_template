@@ -34,7 +34,13 @@ files_to_copy.each do |file_to_copy|
   File.open(new_file, 'w'){|f| f.write content }
 end
 
-sh_or_fail "cd #{gem_name} && bundle exec rake" # check tests and (fast) generate Gemfile.lock
+# check tests and (fast) generate Gemfile.lock
+sh_or_fail "cd #{gem_name} && bundle exec rake"
+
+# add initial gemspec
+sh_or_fail "cd #{gem_name} && rake gemspec"
+
+# commit everything into 'initial'
 sh_or_fail "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
 
 puts "#{gem_name} is now ready at ./#{gem_name}"
