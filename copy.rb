@@ -12,7 +12,7 @@ here = File.dirname(__FILE__)
 gem_class_name = ARGV[0]
 gem_description = ARGV[1]
 if not gem_class_name or not gem_description
-  exit "Usage: ./template/copy.rb MyNewLib 'A great lib to do stuff'"
+  abort "Usage: ./template/copy.rb MyNewLib 'A great lib to do stuff'"
 end
 gem_name = gem_class_name.underscore
 
