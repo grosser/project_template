@@ -3,6 +3,10 @@ GEM_DESCRIPTION
 Install
 =======
     sudo gem install GEM_NAME
+Or
+
+    rails plugin install git://github.com/grosser/GEM_NAME.git
+
 
 Usage
 =====
