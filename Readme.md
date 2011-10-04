@@ -5,7 +5,7 @@ Install
     sudo gem install GEM_NAME
 Or
 
-    rails plugin install git://github.com/grosser/GEM_NAME.git
+    rails plugin install git://github.com/AUTHOR_GITHUB/GEM_NAME.git
 
 
 Usage
@@ -14,7 +14,7 @@ Usage
 
 Author
 ======
-[Michael Grosser](http://grosser.it)<br/>
-michael@grosser.it<br/>
+[AUTHOR_NAME](AUTHOR_HOMEPAGE)<br/>
+AUTHOR_EMAIL<br/>
 Hereby placed under public domain, do what you want, just do not hold me accountable...<br/>
-[![Build Status](https://secure.travis-ci.org/grosser/GEM_NAME.png)](http://travis-ci.org/grosser/GEM_NAME)
+[![Build Status](https://secure.travis-ci.org/AUTHOR_GITHUB/GEM_NAME.png)](http://travis-ci.org/AUTHOR_GITHUB/GEM_NAME)
