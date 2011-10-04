@@ -3,10 +3,6 @@ require 'rubygems'
 require 'rake'
 require 'active_support/core_ext/string'
 
-def sh_or_fail(cmd)
-  sh(cmd) or raise("This did not work...")
-end
-
 # gather variables
 here = File.dirname(__FILE__)
 gem_class_name = ARGV[0]
@@ -16,7 +12,7 @@ if not gem_class_name or not gem_description
 end
 gem_name = gem_class_name.underscore
 
-files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.rvmrc"] - ["#{here}/copy.rb"]
+files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.rvmrc", "#{here}/.travis.yml"] - ["#{here}/copy.rb"]
 files_to_copy.reject!{|f| File.directory?(f) }
 
 files_to_copy.each do |file_to_copy|
@@ -35,12 +31,10 @@ files_to_copy.each do |file_to_copy|
 end
 
 # check tests and (fast) generate Gemfile.lock
-sh_or_fail "cd #{gem_name} && bundle exec rake"
-
-# add initial gemspec
-sh_or_fail "cd #{gem_name} && rake gemspec"
+sh "cd #{gem_name} && bundle exec rake"
 
 # commit everything into 'initial'
-sh_or_fail "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
+sh "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
 
 puts "#{gem_name} is now ready at ./#{gem_name}"
+

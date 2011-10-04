@@ -1,4 +1,4 @@
-require File.expand_path('spec/spec_helper')
+require 'spec_helper'
 
 describe GEM_CLASS_NAME do
   it "has a VERSION" do
