@@ -6,10 +6,9 @@ task :default do
 end
 
 rule /^version:bump:.*/ do |t|
+  file = 'lib/GEM_NAME/version.rb'
   sh "git status | grep 'nothing to commit'" # ensure we are not dirty
   index = ['major', 'minor','patch'].index(t.name.split(':').last)
-  file = 'lib/GEM_NAME/version.rb'
-
   version_file = File.read(file)
   old_version, *version_parts = version_file.match(/(\d+)\.(\d+)\.(\d+)/).to_a
   version_parts[index] = version_parts[index].to_i + 1
