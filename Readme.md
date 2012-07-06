@@ -2,14 +2,12 @@ GEM_DESCRIPTION
 
 Install
 =======
+
     gem install GEM_NAME
-Or
-
-    rails plugin install git://github.com/AUTHOR_GITHUB/GEM_NAME.git
-
 
 Usage
 =====
+
     CODE EXAMPLE
 
 Author
