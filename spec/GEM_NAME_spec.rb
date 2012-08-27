@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe GEM_CLASS_NAME do
   it "has a VERSION" do
