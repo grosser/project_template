@@ -40,7 +40,7 @@ files_to_copy.each do |file_to_copy|
 end
 
 # check tests and (fast) generate Gemfile.lock
-sh "cd #{gem_name} && bundle exec rake"
+sh "cd #{gem_name} && (bundle check || bundle) && bundle exec rake"
 
 # commit everything into 'initial'
 sh "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
