@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 name = "GEM_NAME"
-require "#{name}/version"
+require "#{name.gsub("-","/")}/version"
 
 Gem::Specification.new name, GEM_CLASS_NAME::VERSION do |s|
   s.summary = "GEM_DESCRIPTION"
@@ -10,5 +10,5 @@ Gem::Specification.new name, GEM_CLASS_NAME::VERSION do |s|
   s.files = `git ls-files`.split("\n")
   s.license = "MIT"
   s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem")
-  s.cert_chain = [".public_cert.pem"]
+  s.cert_chain = ["gem-public_cert.pem"]
 end
