@@ -7,7 +7,7 @@ Gem::Specification.new name, GEM_CLASS_NAME::VERSION do |s|
   s.authors = ["AUTHOR_NAME"]
   s.email = "AUTHOR_EMAIL"
   s.homepage = "http://github.com/AUTHOR_GITHUB/#{name}"
-  s.files = `git ls-files`.split("\n")
+  s.files = `git ls-files lib/ bin/`.split("\n")
   s.license = "MIT"
   cert = File.expand_path("~/.ssh/gem-private_key.pem")
   if File.exist?(cert)
