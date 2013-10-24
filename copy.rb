@@ -10,7 +10,7 @@ gem_description = ARGV[1]
 if not gem_class_name or not gem_description
   abort "Usage: ./template/copy.rb MyNewLib 'A great lib to do stuff'"
 end
-gem_name = gem_class_name.underscore
+gem_name = gem_class_name.underscore.gsub("/", "-")
 
 # load settings
 here = File.dirname(__FILE__)
@@ -23,7 +23,11 @@ files_to_copy.reject!{|f| File.directory?(f) }
 files_to_copy.each do |file_to_copy|
   # make new dir and file
   new_file = file_to_copy
-  new_file = new_file.sub(here,'').sub(%r{^/},'').sub('GEM_NAME', gem_name)
+  new_file = new_file.
+    sub(here,'').
+    sub(%r{^/},'').
+    sub('GEM_NAME', gem_name.sub("-", "/")).
+    sub(/\/(.*gemspec)/, "-\\1")
   new_file = "#{gem_name}/#{new_file}"
   sh "mkdir -p #{File.dirname(new_file)} 2>&1"
 
