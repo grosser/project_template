@@ -3,12 +3,16 @@ GEM_DESCRIPTION
 Install
 =======
 
-    gem install GEM_NAME
+```Bash
+gem install GEM_NAME
+```
 
 Usage
 =====
 
-    CODE EXAMPLE
+```Ruby
+CODE EXAMPLE
+```
 
 Author
 ======
