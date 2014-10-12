@@ -17,7 +17,7 @@ here = File.dirname(__FILE__)
 SETTINGS = YAML.load_file("#{here}/.copy.yml")
 
 # copy files
-files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.travis.yml"] - ["#{here}/copy.rb"]
+files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.travis.yml"] - ["#{here}/copy.rb", "#{here}/Gemfile.lock"]
 files_to_copy.reject!{|f| File.directory?(f) }
 
 files_to_copy.each do |file_to_copy|
