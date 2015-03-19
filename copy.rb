@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
-require 'rubygems'
 require 'rake'
-require 'active_support/core_ext/string'
 require 'yaml'
 
 # extract options
@@ -10,7 +8,7 @@ gem_description = ARGV[1]
 if not gem_class_name or not gem_description
   abort "Usage: ./template/copy.rb MyNewLib 'A great lib to do stuff'"
 end
-gem_name = gem_class_name.underscore.gsub("/", "-")
+gem_name = gem_class_name.gsub(/(.)([A-Z])/,'\1_\2').downcase.gsub("/", "-")
 
 # load settings
 here = File.dirname(__FILE__)
@@ -18,7 +16,7 @@ SETTINGS = YAML.load_file("#{here}/.copy.yml")
 
 # copy files
 files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.travis.yml"] - ["#{here}/copy.rb", "#{here}/Gemfile.lock"]
-files_to_copy.reject!{|f| File.directory?(f) }
+files_to_copy.reject! { |f| File.directory?(f) || f.include?("/vendor/") }
 
 files_to_copy.each do |file_to_copy|
   # make new dir and file
