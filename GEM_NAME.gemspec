@@ -8,4 +8,5 @@ Gem::Specification.new name, GEM_CLASS_NAME::VERSION do |s|
   s.homepage = "https://github.com/AUTHOR_GITHUB/#{name}"
   s.files = `git ls-files lib/ bin/ MIT-LICENSE`.split("\n")
   s.license = "MIT"
+  s.required_ruby_version = '>= 2.0.0'
 end
