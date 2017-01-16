@@ -1,5 +1,6 @@
 name = "GEM_NAME"
-require "./lib/#{name.gsub("-","/")}/version"
+$LOAD_PATH << File.expand_path('../lib', __FILE__)
+require "#{name.gsub("-","/")}/version"
 
 Gem::Specification.new name, GEM_CLASS_NAME::VERSION do |s|
   s.summary = "GEM_DESCRIPTION"
