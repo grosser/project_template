@@ -1,0 +1,33 @@
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.1
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 name = "GEM_NAME"
 $LOAD_PATH << File.expand_path("../lib", __FILE__)
 require "#{name.tr("-", "/")}/version"
