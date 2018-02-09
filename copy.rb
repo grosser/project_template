@@ -47,5 +47,9 @@ sh "cd #{gem_name} && (bundle check || bundle) && bundle exec rake"
 # commit everything into 'initial'
 sh "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
 
+if system("which pre_commit_rubocop.rb 2>&1")
+  sh "cd #{gem_name} && pre_commit_rubocop.rb install"
+end
+
 puts "#{gem_name} is now ready at ./#{gem_name}"
 
