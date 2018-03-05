@@ -3,7 +3,7 @@ sudo: false
 cache: bundler
 branches:
   only: master
-script: rake $TASK
+script: bundle exec rake $TASK
 env:
 - TASK=test
 - TASK=rubocop
