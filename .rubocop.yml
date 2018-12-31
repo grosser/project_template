@@ -31,3 +31,6 @@ Layout/MultilineOperationIndentation:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+Style/NumericPredicate:
+  EnforcedStyle: comparison
