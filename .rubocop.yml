@@ -34,3 +34,16 @@ Layout/MultilineMethodCallIndentation:
 
 Style/NumericPredicate:
   EnforcedStyle: comparison
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true # Opt-in
+
+# Opt-in
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true # Opt-in
+
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true # Opt-in
