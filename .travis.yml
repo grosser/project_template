@@ -6,6 +6,7 @@ branches:
 script: bundle exec rake $TASK
 env:
 - TASK=test
+before_install: ruby -e "File.write('Gemfile.lock', File.read('Gemfile.lock').split('BUNDLED WITH').first)"
 rvm:
   - 2.3
   - 2.4
