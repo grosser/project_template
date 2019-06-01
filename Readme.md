@@ -20,3 +20,4 @@ Author
 AUTHOR_EMAIL<br/>
 License: MIT<br/>
 [![Build Status](https://travis-ci.org/AUTHOR_GITHUB/GEM_NAME.svg)](https://travis-ci.org/AUTHOR_GITHUB/GEM_NAME)
+[![coverage](https://img.shields.io/badge/coverage-100%25-success.svg)](https://github.com/grosser/single_cov)
