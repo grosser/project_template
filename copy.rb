@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'bundler/setup'
 require 'rake'
 require 'yaml'
 
@@ -41,14 +42,16 @@ files_to_copy.each do |file_to_copy|
   File.open(new_file, 'w'){|f| f.write content }
 end
 
-# check tests and (fast) generate Gemfile.lock
-sh "cd #{gem_name} && (bundle check || bundle) && bundle exec rake"
+Bundler.with_original_env do
+  # check tests and (fast) generate Gemfile.lock
+  sh "cd #{gem_name} && (bundle check || bundle) && bundle exec rake"
 
-# commit everything into 'initial'
-sh "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
+  # commit everything into 'initial'
+  sh "cd #{gem_name} && git init && git add . && git commit -m 'initial by http://github.com/grosser/project_template'"
 
-if system("which pre_commit_rubocop.rb 2>&1")
-  sh "cd #{gem_name} && pre_commit_rubocop.rb install"
+  if system("which -s pre_commit_rubocop.rb")
+    sh "cd #{gem_name} && pre_commit_rubocop.rb install"
+  end
 end
 
 puts "#{gem_name} is now ready at ./#{gem_name}"
