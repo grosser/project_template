@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         task: ["test"]
-        ruby: [ '2.6', '2.7', '3.0' ]
+        ruby: ['2.7', '3.0', '3.1']
         include:
-        - ruby: 2.6 # keep in sync with lowest version
+        - ruby: 2.7 # keep in sync with lowest version and .rubocop.yml
           task: rubocop
     name: ${{ matrix.ruby }} rake ${{ matrix.task }}
     steps:
