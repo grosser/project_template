@@ -16,7 +16,7 @@ here = File.dirname(__FILE__)
 SETTINGS = YAML.load_file("#{here}/.copy.yml")
 
 # copy files
-files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.rubocop.yml"] - ["#{here}/copy.rb", "#{here}/Gemfile.lock"]
+files_to_copy = Dir["#{here}/**/**"] + ["#{here}/.rubocop.yml"] + Dir["#{here}/.github/**/**"] - ["#{here}/copy.rb", "#{here}/Gemfile.lock"]
 files_to_copy.reject! { |f| File.directory?(f) || f.include?("/vendor/") }
 
 files_to_copy.each do |file_to_copy|
